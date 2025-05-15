@@ -20,13 +20,29 @@ public class BootjpaexampleApplication {
 		ApplicationContext context =SpringApplication.run(BootjpaexampleApplication.class, args);
 		UserRepository userRepository =context.getBean(UserRepository.class);
 		
-		User user= new User();
-		user.setName("Nitya");
-		user.setCity("delhi");
-		user.setStatus("java programmer");
+//		User user= new User();
+//		user.setName("Nitya");
+//		user.setCity("delhi");
+//		user.setStatus("java programmer");
+//		
+//		User user1 =userRepository.save(user);
+//		System.out.println(user1);
 		
-		User user1 =userRepository.save(user);
-		System.out.println(user1);
+		//create object of user
+		User user= new User();
+		user.setName("cinderella");
+		user.setCity("disney");
+		user.setStatus("princess with lost shoe");
+		
+		User user1= new User();
+		user1.setName("ratatouille");
+		user1.setCity("pixar");
+		user1.setStatus("chef rat");
+		
+		User res= userRepository.save(user1);
+		System.out.println("saved user "+res);
+		System.out.println("done");
+		
 	}
 
 }
