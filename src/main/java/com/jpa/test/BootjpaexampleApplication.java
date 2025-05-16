@@ -94,8 +94,25 @@ public class BootjpaexampleApplication {
 //		allusers.forEach(user->System.out.println(user));
 //		userRepository.deleteAll(allusers);
 		
-		List<User> users= userRepository.findByNameAndCity("cinderella","disney");
-		users.forEach(e-> System.out.println(e));
+		//List<User> users= userRepository.findByName("cinderella");
+//		List<User> users= userRepository.findByNameAndCity("cinderella","disney");
+//		users.forEach(e-> System.out.println(e));
+		
+		List<User> allUser = userRepository.getAllUser();
+		allUser.forEach(e->{
+			System.out.println(e);
+		});
+		
+		System.out.println("------------------");
+		
+		List<User> userByName = userRepository.getUserByName("nitya");
+		userByName.forEach(e->{
+			System.out.println(e);
+		});
+		
+		System.out.println("-----------------");
+		
+		userRepository.getUsers().forEach(e->System.out.println(e));
 		
 	}
 
